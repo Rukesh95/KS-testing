@@ -1,0 +1,124 @@
+private void button1_Click(object sender, EventArgs e)
+        {
+            Random ran = new Random();
+            Decimal[] nums;
+            nums = new Decimal[5];
+            Decimal count = 0;
+            int num = ran.Next(0, 50);
+            for (int i = 0 ; i < 5 ; i++)   
+            {
+                num = ran.Next(0, 50);
+                Decimal num1 = num;
+                count = count + 1;
+                Decimal num2 = num1 / 100;
+                nums[i] = num2;
+                richTextBox1.Text = num2.ToString()+ " , " + richTextBox1.Text ;
+            }
+            textBox1.Text = nums[0].ToString();
+            textBox2.Text = nums[1].ToString();
+            textBox3.Text = nums[2].ToString();
+            textBox4.Text = nums[3].ToString();
+            textBox5.Text = nums[4].ToString();
+            Decimal i1 = Convert.ToDecimal(label2.Text);
+            Decimal i2 = Convert.ToDecimal(label3.Text);
+            Decimal i3 = Convert.ToDecimal(label4.Text);
+            Decimal i4 = Convert.ToDecimal(label5.Text);
+            Decimal i5 = Convert.ToDecimal(label6.Text);
+            Decimal dif1 = i1 / count;
+            Decimal dif2 = i2 / count;
+            Decimal dif3 = i3 / count;
+            Decimal dif4 = i4 / count;
+            Decimal dif5 = i5 / count;
+            textBox6.Text = dif1.ToString();
+            textBox7.Text = dif2.ToString();
+            textBox8.Text = dif3.ToString();
+            textBox9.Text = dif4.ToString();
+            textBox10.Text = dif5.ToString();
+            Decimal sub1 = dif1 - nums[0];
+            Decimal sub2 = dif2 - nums[1];
+            Decimal sub3 = dif3 - nums[2];
+            Decimal sub4 = dif4 - nums[3];
+            Decimal sub5 = dif5 - nums[4];
+            textBox11.Text = sub1.ToString();
+            textBox12.Text = sub2.ToString();
+            textBox13.Text = sub3.ToString();
+            textBox14.Text = sub4.ToString();
+            textBox15.Text = sub5.ToString();
+            Decimal test1 = i1 - (1 / count);
+            Decimal test2 = i2 - (1 / count);
+            Decimal test3 = i3 - (1 / count);
+            Decimal test4 = i4 - (1 / count);
+            Decimal test5 = i5 - (1 / count);
+            textBox16.Text = test1.ToString();
+            textBox17.Text = test2.ToString();
+            textBox18.Text = test3.ToString();
+            textBox19.Text = test4.ToString();
+            textBox20.Text = test5.ToString();
+            Decimal final1 = nums[0] - test1;
+            Decimal final2 = nums[1] - test2;
+            Decimal final3 = nums[2] - test3;
+            Decimal final4 = nums[3] - test4;
+            Decimal final5 = nums[4] - test5;
+            textBox21.Text = final1.ToString();
+            textBox22.Text = final2.ToString();
+            textBox23.Text = final3.ToString();
+            textBox24.Text = final4.ToString();
+            textBox25.Text = final5.ToString();
+            Decimal d;
+            if(sub1 > sub2 && sub1 > sub3 && sub1 > sub4 && sub1 > sub5 && sub1 > final1 && sub1 > final2 && sub1 > final3 &&sub1> final4 && sub1 > final5 )
+            {
+                d = sub1;
+            }
+            else if (sub2 > sub3 && sub2 > sub4 && sub2 > sub5 && sub2 > final1 && sub2 > final2 && sub2 > final3 && sub2 > final4 && sub2 > final5)
+            {
+                d = sub2;
+            }
+            else if (sub3 > sub4 && sub3 > sub5 && sub3 > final1 && sub3 > final2 && sub3 > final3 && sub3 > final4 && sub3 > final5)
+            {
+                d = sub3;
+            }
+            else if (sub4 > sub5 && sub4 > final1 && sub4 > final2 && sub4 > final3 && sub4 > final4 && sub4 > final5)
+            {
+                d = sub4;
+            }
+            else if (sub5 > final1 && sub5 > final2 && sub5 > final3 && sub5 > final4 && sub5 > final5)
+            {
+                d = sub5;
+            }
+            else if (final1 > final2 && final1 > final3 && final1 > final4 && final1 > final5)
+            {
+                d = final1;
+            }
+            else if (final2> final3 && final2 > final4 && final2 > final5)
+            {
+                d = final2;
+            }
+            else if (final3 > final4 && final3 > final5)
+            {
+                d = final3;
+            }
+            else if (final4 > final5)
+            {
+                d = final4;
+            }
+            else
+            {
+                d = final5;
+            }
+            textBox26.Text = d.ToString();
+            if( d <= Convert.ToDecimal(textBox29.Text) || d <= Convert.ToDecimal(textBox28.Text) || d <= Convert.ToDecimal(textBox27.Text))
+            {
+                label17.Visible = true;
+            }
+            else
+            {
+                label18.Visible = true;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 f = new Form1();
+            f.Show();
+        }
